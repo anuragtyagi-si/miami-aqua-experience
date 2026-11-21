@@ -1,3 +1,5 @@
+import { isValidPhoneNumber } from 'libphonenumber-js/min';
+
 export const INSTAGRAM = 'https://www.instagram.com/miami.aquaexperience/';
 export const SERVICES = [
   {
@@ -103,8 +105,8 @@ export function validateBooking(booking: Booking, now = new Date()): string | nu
     booking.names.some((name) => name.trim().length < 2 || name.trim().length > 80)
   )
     return 'Enter a name (2–80 characters) for every guest.';
-  const digits = booking.phone.replace(/\D/g, '');
-  if (!/^[+\d\s().-]+$/.test(booking.phone) || digits.length < 7 || digits.length > 15)
+  const phone = booking.phone.trim();
+  if (!/^\+[1-9][\d\s().-]+$/.test(phone) || !isValidPhoneNumber(phone))
     return 'Enter a valid phone number, including your country code.';
   return null;
 }

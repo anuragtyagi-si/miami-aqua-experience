@@ -31,6 +31,9 @@ describe('booking rules', () => {
     expect(validateBooking({ ...valid, names: ['Alex'] }, now)).toMatch(/every guest/);
     expect(validateBooking({ ...valid, names: ['Alex', ' '] }, now)).toMatch(/every guest/);
     expect(validateBooking({ ...valid, phone: 'abc123' }, now)).toMatch(/phone/);
+    expect(validateBooking({ ...valid, phone: '5550123' }, now)).toMatch(/phone/);
+    expect(validateBooking({ ...valid, phone: '305+555+0123' }, now)).toMatch(/phone/);
+    expect(validateBooking({ ...valid, phone: '+999 123456789' }, now)).toMatch(/phone/);
     expect(validateBooking({ ...valid, phone: '+44 20 7946 0958' }, now)).toBeNull();
   });
   it('rejects invalid party sizes, past dates and dates beyond the booking window', () => {
