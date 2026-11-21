@@ -418,7 +418,13 @@ export default function BookingFunnel({
                 className="button button-dark"
                 type={step === 2 ? 'submit' : 'button'}
                 form={step === 2 ? 'details-form' : undefined}
-                onClick={step === 2 ? undefined : step === 3 ? confirm : nextStep}
+                onClick={(event) => {
+                  if (step === 2) return;
+                  // React reuses this button: cancel native activation before it becomes a submit.
+                  event.preventDefault();
+                  if (step === 3) confirm();
+                  else nextStep();
+                }}
               >
                 {step === 1
                   ? 'Continue to your details'
