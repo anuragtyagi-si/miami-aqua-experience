@@ -16,6 +16,7 @@ import {
   X,
 } from 'lucide-react';
 import BookingFunnel from './BookingFunnel';
+import { assetUrl } from './assets';
 import { INSTAGRAM, SERVICES } from './booking';
 import type { ServiceId } from './booking';
 
@@ -122,9 +123,9 @@ export default function App() {
             </div>
             <div className="hero-social">
               <div className="avatar-stack">
-                <img src="/assets/coach.webp" alt="" />
-                <img src="/assets/wake.webp" alt="" />
-                <img src="/assets/friends.webp" alt="" />
+                <img src={assetUrl('coach.webp')} alt="" />
+                <img src={assetUrl('wake.webp')} alt="" />
+                <img src={assetUrl('friends.webp')} alt="" />
               </div>
               <div>
                 <strong>Good people. Great water.</strong>
@@ -137,7 +138,7 @@ export default function App() {
           <div className="hero-visual">
             <img
               className="hero-image"
-              src="/assets/hero.webp"
+              src={assetUrl('hero.webp')}
               alt="A Miami Aqua Experience wake surfer riding a turquoise wave off Miami Beach"
               width="720"
               height="1280"
@@ -259,7 +260,7 @@ export default function App() {
         <section id="our-vibe" className="vibe-section section-pad">
           <div className="vibe-photo">
             <img
-              src="/assets/coach.webp"
+              src={assetUrl('coach.webp')}
               alt="Liz Vasquez smiling aboard a boat in Miami, from @miami.aquaexperience"
               width="640"
               height="800"
@@ -354,7 +355,7 @@ export default function App() {
             ].map((m) => (
               <a key={m.image} href={m.href} target="_blank" rel="noreferrer" className="moment">
                 <img
-                  src={`/assets/${m.image}.webp`}
+                  src={assetUrl(`${m.image}.webp`)}
                   alt={m.alt}
                   width="640"
                   height="800"
@@ -484,8 +485,8 @@ export default function App() {
         </button>
         <video
           ref={videoRef}
-          src="/assets/ride.mp4"
-          poster="/assets/hero.webp"
+          src={assetUrl('ride.mp4')}
+          poster={assetUrl('hero.webp')}
           controls
           playsInline
           preload="none"

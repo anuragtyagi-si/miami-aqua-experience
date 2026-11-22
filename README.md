@@ -19,6 +19,13 @@ npm run preview      # serve the production build after npm run build
 
 Deploy `dist/` to any static host after `npm run build`. All images, video, icons and fonts are local; the only outbound navigation is to original Instagram sources. The production JS bundle is tree-shaken and video is loaded only when opened.
 
+## GitHub Pages
+
+The public site is hosted at **https://anuragtyagi-si.github.io/miami-aqua-experience/**.
+The `Deploy GitHub Pages` workflow checks and builds the React app from **main**, then publishes `dist/` through GitHub's official Pages actions. It runs on pushes to main or can be run manually against main. Repository Settings → Pages uses **GitHub Actions** as the publishing source; no generated build files or separate publishing branch are committed.
+
+Vite's base path is `/miami-aqua-experience/`; media URLs use that same base. For local development or production preview, open the printed URL with `/miami-aqua-experience/` appended. The design, media, pricing and booking rules are unchanged by deployment.
+
 ## Booking behavior
 
 - Choose wake surfing ($350) or e-foil / e-surf ($350, 2 hours).
