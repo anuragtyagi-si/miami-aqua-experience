@@ -1,4 +1,5 @@
 import { isValidPhoneNumber } from 'libphonenumber-js/min';
+import { assetUrl } from './assets';
 
 export const INSTAGRAM = 'https://www.instagram.com/miami.aquaexperience/';
 export const SERVICES = [
@@ -7,7 +8,7 @@ export const SERVICES = [
     name: 'Wake surfing',
     price: 350,
     duration: 'Ride the wake',
-    image: '/assets/wake.webp',
+    image: assetUrl('wake.webp'),
     description: 'Find your balance. Feel the rush. Turn the Miami coastline into your playground.',
     tag: 'Chase the endless wave',
     detail: 'Boat-powered waves · A classic Miami ride',
@@ -17,7 +18,7 @@ export const SERVICES = [
     name: 'E-foil / E-surf',
     price: 350,
     duration: '2-hour experience',
-    image: '/assets/efoil.webp',
+    image: assetUrl('efoil.webp'),
     description:
       'A little less gravity. A lot more freedom. Discover the feeling of flying above the water.',
     tag: 'Meet your new obsession',
